@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservations - Inventory System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Inventory System</h1>
+    </div>
+    <div class="main-hedding">
+        <h1>Current Reservations</h1>
+    </div>
+    <div class="main-div">
+        <div class="main-div-header">
+            <button class="back-button" onclick="location.href = 'admininventorymenu'">Back</button>
+        </div>
+        <br>
+
+    <div style="display: flex; flex-direction: row; height: 20px;">
+        <div class="cell" style="height: 20px;"><b>User</b></div>
+        <div class="cell" style="height: 20px;"><b>Equipment Name</b></div>
+        <div class="cell" style="height: 20px;"><b>Reserved On</b></div>
+    </div>
+
+    {% for reservation in reservations %}
+    <div style="display: flex; flex-direction: row; height: 40px;">
+        <div class="cell" style="height: 40px;">{{ reservation.user }}</div>
+        <div class="cell" style="height: 40px;">{{ reservation.equipmentName }}</div>
+        <div class="cell" style="height: 40px;">{{ reservation.reservationDate }}</div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

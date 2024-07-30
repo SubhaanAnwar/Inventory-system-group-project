@@ -1,0 +1,49 @@
+<!--Subhaan, Esat-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Inventory Menu</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1><a href="admininventorymenu" style="color: inherit; text-decoration: none;">Inventory System</a></h1>
+        <!-- User section with dropdown menu -->
+        <div>
+            <img src="{% static 'user.png' %}" alt="user" class="user-icon">
+            <!-- Dropdown menu -->
+            <div class="dropdown">
+                <img src="{% static 'drop-down.png' %}" alt="arrow" class="drop-down-icon">
+                <div class="dropdown-content">
+                    <!-- Links in the dropdown menu -->
+                    <a class="dropBtnmenu" href="admincurrentreservation">Manage Reservation</a>
+                    <a class="dropBtnmenu" href="{% url 'logout' %}">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content section -->
+    <div class="main-div">
+        <h2>Admin</h2>
+        <!-- Admin options/buttons -->
+        <button class="btn-inventory-menu" onclick="location.href = 'viewinventory'">View Inventory</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'addequipment'">Add Equipment</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'reservation'">View Current Reservations</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'generate-pdf'">Generate Report</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'updateequipment'">Update Equipment</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'deleteequipment'">Delete Equipment</button>
+        <button class="btn-inventory-menu" onclick="location.href = 'useraccountmanagement'">User Account Management</button>
+        <input type="button" value="Backup/Recovery" class="btn-inventory-menu">
+        <button class="btn-inventory-menu" onclick="location.href = 'admin'">Site Administration</button>
+    </div>
+
+</body>
+
+</html>

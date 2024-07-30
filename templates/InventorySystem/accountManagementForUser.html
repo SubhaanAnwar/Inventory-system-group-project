@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!--Not in use-->
+<head>
+    <!-- Meta tags for character set, viewport, and compatibility -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Title of the page -->
+    <title>School Inventory - Account Management</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <!-- Header section -->
+    <div class="header">
+        <!-- Title of the page -->
+        <h1>Inventory System</h1>
+    </div>
+    <!-- Main heading section -->
+    <div class="main-hedding">
+        <!-- Heading for account management -->
+        <h1>Account Management</h1>
+    </div>
+    <!-- Main content section -->
+    <div class="main-div">
+        <!-- Form section -->
+        <div class="form-div">
+            <!-- Image for main user -->
+            <img src="{% static 'main-user.png' %}" width="200">
+            <br>
+            <!-- Form rows for user input -->
+            <div class="form-row">
+                <!-- Input field for user name -->
+                <input type="text" class="text-form-equipment" placeholder="User Name"> &nbsp;
+                <!-- Button to update user name -->
+                <input type="button" value="Update" class="btn-add-equipment">
+            </div>
+            <div class="form-row">
+                <!-- Input field for email -->
+                <input type="text" class="text-form-equipment" placeholder="Email"> &nbsp;
+                <!-- Button to update email -->
+                <input type="button" value="Update" class="btn-add-equipment">
+            </div>
+            <div class="form-row">
+                <!-- Input field for password -->
+                <input type="text" class="text-form-equipment" placeholder="Password"> &nbsp;
+                <!-- Button to update password -->
+                <input type="button" value="Update" class="btn-add-equipment">
+            </div>
+        </div>
+        <!-- Button section -->
+        <div class="btn-fom-div">
+            <!-- Button to go back -->
+            <input type="button" value="Back" class="back-button">
+        </div>
+    </div>
+
+</body>
+
+</html>

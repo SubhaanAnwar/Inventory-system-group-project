@@ -1,0 +1,22 @@
+<!--Muhammad-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script>
+        setTimeout(function() {
+            window.location.replace("{% url 'redirect_page' %}");
+        }, 2000); // Redirect after 2 seconds
+    </script>
+</head>
+<body>
+    <div class="main-hedding">
+    <h1>Welcome, {{ username }}!</h1>
+    <p>Redirecting...</p>
+    </div>
+</body>
+</html>

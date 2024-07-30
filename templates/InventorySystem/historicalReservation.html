@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!--Not in use-->
+<head>
+    <!-- Meta tags for character set, viewport, and compatibility -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Title of the page -->
+    <title>School Inventory - Historical Reservations</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <!-- Header section -->
+    <div class="header">
+        <!-- Title of the inventory system -->
+        <h1>Inventory System</h1>
+    </div>
+    <!-- Main heading section -->
+    <div class="main-hedding">
+        <!-- Heading for historical reservations -->
+        <h1>Historical Reservation</h1>
+    </div>
+    <!-- Main content section -->
+    <div class="main-div">
+        <!-- Main content header section -->
+        <div class="main-div-header">
+            <!-- Search bar and dropdown menu section -->
+            <div>
+                <!-- Search input field -->
+                <input type="search" name="search" class="search" placeholder="Search...">
+                <!-- Dropdown menu -->
+                <div class="dropdown">
+                    <!-- Dropdown icon -->
+                    <img src="{% static 're.png' %}" alt="arrow" class="drop-down-icon" style="width: 50px;">
+                    <!-- Dropdown content -->
+                    <div class="dropdown-content">
+                        <!-- Dropdown options -->
+                        <a href="#">Availability</a>
+                        <a href="#">Date return date</a>
+                        <a href="#">Type of equipment</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Button to go back -->
+            <button class="back-button" onclick="location.href = 'userinventorymenu'">Back</button>
+        </div>
+        <!-- Reservation list sections -->
+        <!-- Placeholder reservation lists -->
+        <div class="reservation-list"> </div>
+        <div class="reservation-list"> </div>
+        <div class="reservation-list"> </div>
+        <div class="reservation-list"> </div>
+    </div>
+   
+</body>
+
+</html>

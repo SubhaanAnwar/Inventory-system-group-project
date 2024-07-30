@@ -1,0 +1,62 @@
+ <!--Esat, Kenny, Subhaan-->
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Equipment - Inventory System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Inventory System</h1>
+    </div>
+    <div class="main-hedding">
+        <h1>Update Equipment</h1>
+    </div>
+    <!-- Main content section-->
+    <div class="main-div">
+        <div class="main-div-header">
+            <button class="back-button" onclick="location.href = 'admininventorymenu'">Back</button>
+        </div>
+        <br>
+            <!-- Grid for displaying equipment cells -->
+            <div style="display: flex; flex-direction: row; height: 20px;">
+                <div class="cell" style="height: 20px;"><b>Device Name</b></div>
+                <div class="cell" style="height: 20px;"><b>Device Type</b></div>
+                <div class="cell" style="height: 20px;"><b>Quantity</b></div>
+                <div class="cell" style="height: 20px;"><b>Audit</b></div>
+                <div class="cell" style="height: 20px;"><b>Location</b></div>
+                <div class="cell" style="height: 20px;"><b>Status</b></div>
+                <div class="cell" style="height: 20px;"><b>Comments</b></div>
+                <div class="cell" style="height: 20px;"><b>Actions</b></div>
+            </div>
+
+            {% for item in equipment_items %}
+            <div style="display: flex; flex-direction: row; height: 40px;">
+                <div class="cell" style="height: 40px;">{{ item.equipmentName }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentType }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentQuantity }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentAudit }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentLocation }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentStatus }}</div>
+                <div class="cell" style="height: 40px;">{{ item.equipmentComments }}</div>
+                <div class="cell" style="height: 40px;">
+                    <!-- Form takes primary key of chosen item to update and takes user to update equipment details page -->
+                    <form method="post" action="{% url 'InventorySystem1_updateEquipmentDetails' item.pk %}">
+                        {% csrf_token %}
+                        <button type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" id="hidden-submit-btn" style="display: none;"></button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--Subhaan, Muhammad-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Inventory System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="main-hedding">
+        <h1 class="admintxt">School Inventory System</h1>
+    </div>
+    <!-- Main content section for the school inventory system -->
+    <div class="schoolInvt">
+        <!-- Form for admin and user login -->
+        <div class="form-div">
+            <img src="{% static 'inventory.png' %}" style="width: 40%">
+            <br>
+            <h2>To proceed, please select one of the buttons below.</h2>
+            <!-- Button for admin login -->
+            <button class="btn-login-inv" onclick="location.href = 'login'">Log-in</button>
+            <br><br>
+            <!-- Button for user login -->
+            <button class="btn-login-inv" onclick="location.href = 'signup'">Sign-Up</button>
+            <h6>Created by:
+                Deondre Matthews,
+                Subhaan Anwar,
+                Esat Bala,
+                Kenny Liter Kiala,
+                Muhammad Masood</h6>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Not in use-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Reservation</title>
+</head>
+<body>
+    <h1>Cancel Reservation</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% elif message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>Reservation ID: {{ reservation.id }}</p>
+        <p>Equipment Name: {{ reservation.equipmentName }}</p>
+        <!-- Add more details as needed -->
+        <p>Reservation Date: {{ reservation.reservationDate }}</p>
+    {% endif %}
+</body>
+</html>

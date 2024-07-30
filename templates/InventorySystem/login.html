@@ -1,0 +1,51 @@
+<!--Muhammad-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log-in - Inventory System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1><a href="" style="color: inherit; text-decoration: none;">Inventory System</a></h1>
+    </div>
+    <div class="main-hedding">
+        <h1>Log-in to Inventory System</h1>
+    </div>
+    <!-- Main login form section -->
+    <div class="main-div-login">
+        <div class="form-div">
+            <form class="form-div" method="post">
+                {% csrf_token %}
+                <!-- User role -->
+                <img src="{% static 'main-user.png' %}" width="100">
+                <br>
+                <!-- Display error message if it exists -->
+                {% if form.errors %}
+                <p class="error-message">Invalid username or password.</p>
+                {% endif %}
+                <!-- Form rows for input fields -->
+                <div class="form-row">
+                    <!-- Input field for username -->
+                    <input type="text" id="username" placeholder="Username" name="username" class="text-login" required>
+                </div>
+                <div class="form-row">
+                    <!-- Input field for password -->
+                    <input type="password" id="password" placeholder="Password" name="password" class="text-login" required>
+                </div>
+                <br>
+                <!-- Login button -->
+                <input type="submit" value="Login" class="btn-login">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

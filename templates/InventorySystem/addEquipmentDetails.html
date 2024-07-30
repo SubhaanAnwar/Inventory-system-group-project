@@ -1,0 +1,75 @@
+{% load static %}
+<!--Esat, Subhaan-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Equipment Details - School Inventory</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Inventory System</h1>
+    </div>
+    <div class="main-hedding">
+        <h1>Add Equipment</h1>
+    </div>
+    <!-- Main content section -->
+    <div class="main-div">
+        <!-- Form section for adding equipment -->
+        <div class="form-div">
+            <img src="{% static 'main-user.png' %}" width="200">
+            <br>
+            <!-- Form for adding equipment -->
+            <form method="post" action="{% url 'InventorySystem_addEquipmentDetails' %}">
+                {% csrf_token %}
+                
+                <!-- Form rows for input fields -->
+                <div class="form-row">
+                    
+                    <input type="text" name="item_name" class="text-form-equipment" placeholder="Item Name">
+                </div>
+                <div class="form-row">
+                   
+                    <input type="text" name="item_type" class="text-form-equipment" placeholder="Item Type">
+                </div>
+                <div class="form-row">
+                    
+                    <input type="text" name="quantity" class="text-form-equipment" placeholder="Quantity">
+                </div>
+                <div class="form-row">
+                    
+                    <input type="text" name="audit" class="text-form-equipment" placeholder="Audit">
+                </div>
+                <div class="form-row">
+                    
+                    <input type="text" name="location" class="text-form-equipment" placeholder="Location">
+                </div>
+                <div class="form-row">
+                    
+                    <input type="text" name="status" class="text-form-equipment" placeholder="Status">
+                </div>
+                <div class="form-row">
+                    
+                    <input type="text" name="comments" class="text-form-equipment" placeholder="Comments">
+                </div>
+                
+                <!-- Button to add equipment -->
+                <input type="submit" value="Add" class="btn-add-equipment">
+            </form>
+
+        </div>
+        <!-- Button section -->
+        <div class="btn-fom-div">
+            <!-- Button to go back -->
+            <button class="back-button" onclick="location.href = 'addequipment'">Back</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

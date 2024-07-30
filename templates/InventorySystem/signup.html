@@ -1,0 +1,68 @@
+<!--Muhammad-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign-Up - Inventory System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h1><a href="" style="color: inherit; text-decoration: none;">Inventory System</a></h1>
+    </div>
+    <div class="main-hedding">
+        <h1>Sign-Up to Inventory System</h1>
+    </div>
+    <!-- Main sign-up form section -->
+    <div class="main-div-login">
+        <div class="form-div">
+            <img src="{% static 'main-user.png' %}" width="100">
+            <br>
+            <!-- Form rows for input fields -->
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <!-- Input field for username -->
+                    <input type="text" name="username" placeholder="Username" class="text-login"> &nbsp;
+                </div>
+                <div class="form-row">
+                    <!-- Input field for password -->
+                    <input type="password" name="password1" placeholder="Password" class="text-login">
+                </div>
+                <div class="form-row">
+                    <!-- Input field for confirming password -->
+                    <input type="password" name="password2" placeholder="Confirm Password" class="text-login">
+                </div>
+                <div class="form-row">
+                    <!-- Checkbox for admin status -->
+                    <input type="checkbox" class="text-login" name="is_admin"> Assign Admin Privileges To This Account
+                </div>
+                <br>
+                <!-- Sign-up button -->
+                <input type="submit" value="Sign up" class="btn-login">
+            </form>
+            <!-- Display form errors -->
+            {% if form.errors %}
+            <div class="error-msg">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+ 
